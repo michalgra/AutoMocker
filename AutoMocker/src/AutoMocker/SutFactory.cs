@@ -12,6 +12,8 @@ namespace AutoMocker
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterType<T>();
 
+            containerBuilder.RegisterSource(new AutoMockRegistrationSource());
+
             _container = containerBuilder.Build();
         }
 

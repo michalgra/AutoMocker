@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentWithDependencies.cs" />
     <Compile Include="ComponentWithoutDependencies.cs" />
+    <Compile Include="IDependency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SutFactoryTests.cs" />
   </ItemGroup>
