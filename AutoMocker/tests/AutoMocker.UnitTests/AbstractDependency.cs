@@ -1,6 +1,6 @@
 ﻿namespace AutoMocker.UnitTests
 {
-    public class CustomDependency : IDependency
+    public abstract class AbstractDependency
     {
     }
 }

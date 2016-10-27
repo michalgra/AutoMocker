@@ -30,6 +30,18 @@ namespace AutoMocker.UnitTests
         }
 
         [Test]
+        public void Should_create_instance_of_component_with_abstract_class_dependency()
+        {
+            using (var sut = new SutFactory<ComponentWithAbstactClassDependency>())
+            {
+                var result = sut.Create();
+
+                result.Should().NotBeNull();
+                result.Dependency.Should().NotBeNull();
+            }
+        }
+
+        [Test]
         public void Should_return_mock_used_as_components_dependency()
         {
             using (var sut = new SutFactory<ComponentWithDependencies>())

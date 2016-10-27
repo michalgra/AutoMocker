@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDependency.cs" />
+    <Compile Include="ComponentWithAbstactClassDependency.cs" />
     <Compile Include="ComponentWithDependencies.cs" />
     <Compile Include="ComponentWithoutDependencies.cs" />
     <Compile Include="CustomDependency.cs" />

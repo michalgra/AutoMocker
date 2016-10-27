@@ -22,7 +22,7 @@ namespace AutoMocker
             }
 
             var serviceType = swt.ServiceType;
-            if (!serviceType.IsInterface)
+            if (!serviceType.IsInterface && !serviceType.IsAbstract)
             {
                 return noComponents;
             }
