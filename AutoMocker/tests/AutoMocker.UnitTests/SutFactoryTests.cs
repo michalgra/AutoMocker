@@ -40,5 +40,18 @@ namespace AutoMocker.UnitTests
                 result.Dependency.Should().Be(mock.Object);
             }
         }
+
+        [Test]
+        public void Allow_to_use_custom_dependency_implementation()
+        {
+            using (var sut = new SutFactory<ComponentWithDependencies>())
+            {
+                var customDependency = new CustomDependency();
+                sut.UseDependency<IDependency>(customDependency);
+                var result = sut.Create();
+
+                result.Dependency.Should().Be(customDependency);
+            }
+        }
     }
 }

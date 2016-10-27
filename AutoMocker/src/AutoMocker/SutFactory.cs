@@ -6,16 +6,13 @@ namespace AutoMocker
 {
     public class SutFactory<T> : IDisposable
     {
-        private readonly IContainer _container;
+        private IContainer _container;
+        private readonly ContainerBuilder _containerBuilder = new ContainerBuilder();
 
         public SutFactory()
         {
-            var containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterType<T>();
-
-            containerBuilder.RegisterSource(new AutoMockRegistrationSource());
-
-            _container = containerBuilder.Build();
+            _containerBuilder.RegisterType<T>();
+            _containerBuilder.RegisterSource(new AutoMockRegistrationSource());
         }
 
         ~SutFactory()
@@ -32,7 +29,7 @@ namespace AutoMocker
         {
             if (disposing)
             {
-                _container.Dispose();
+                _container?.Dispose();
             }
 
             GC.SuppressFinalize(this);
@@ -40,12 +37,19 @@ namespace AutoMocker
 
         public T Create()
         {
+            _container = _containerBuilder.Build();
             return _container.Resolve<T>();
         }
 
         public Mock<TDependency> GetMock<TDependency>() where TDependency : class
         {
             return _container.Resolve<Mock<TDependency>>();
+        }
+
+        public void UseDependency<TDependency>(TDependency dependency) where TDependency : class
+        {
+            _containerBuilder.RegisterInstance(dependency)
+                .As<TDependency>();
         }
     }
 }
