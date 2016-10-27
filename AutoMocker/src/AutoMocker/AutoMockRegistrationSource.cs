@@ -48,6 +48,7 @@ namespace AutoMocker
             yield return RegistrationBuilder.ForDelegate(
                     (c, p) => new Mock<T>())
                 .AsSelf()
+                .InstancePerLifetimeScope()
                 .CreateRegistration();
 
             yield return RegistrationBuilder.ForDelegate(

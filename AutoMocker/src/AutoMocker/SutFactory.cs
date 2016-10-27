@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using Moq;
 
 namespace AutoMocker
 {
@@ -40,6 +41,11 @@ namespace AutoMocker
         public T Create()
         {
             return _container.Resolve<T>();
+        }
+
+        public Mock<TDependency> GetMock<TDependency>() where TDependency : class
+        {
+            return _container.Resolve<Mock<TDependency>>();
         }
     }
 }

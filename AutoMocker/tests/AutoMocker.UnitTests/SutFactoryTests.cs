@@ -28,5 +28,17 @@ namespace AutoMocker.UnitTests
                 result.Dependency.Should().NotBeNull();
             }
         }
+
+        [Test]
+        public void Should_return_mock_used_as_components_dependency()
+        {
+            using (var sut = new SutFactory<ComponentWithDependencies>())
+            {
+                var result = sut.Create();
+                var mock = sut.GetMock<IDependency>();
+
+                result.Dependency.Should().Be(mock.Object);
+            }
+        }
     }
 }
