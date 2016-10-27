@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMocker", "src\AutoMocke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMocker.UnitTests", "tests\AutoMocker.UnitTests\AutoMocker.UnitTests.csproj", "{5A61EC93-B586-4CC0-B24B-8BFE6FE8C15E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMocker.NUnit", "src\AutoMocker.NUnit\AutoMocker.NUnit.csproj", "{B3B4E7BC-39C6-4D6D-B1DA-AB7771BA1A8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{5A61EC93-B586-4CC0-B24B-8BFE6FE8C15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A61EC93-B586-4CC0-B24B-8BFE6FE8C15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A61EC93-B586-4CC0-B24B-8BFE6FE8C15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B4E7BC-39C6-4D6D-B1DA-AB7771BA1A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B4E7BC-39C6-4D6D-B1DA-AB7771BA1A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B4E7BC-39C6-4D6D-B1DA-AB7771BA1A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B4E7BC-39C6-4D6D-B1DA-AB7771BA1A8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{23FAF8C5-2B1A-4FC7-8F91-3678AD23C698} = {6925F0FE-0626-458B-974A-8BDC1818E740}
 		{5A61EC93-B586-4CC0-B24B-8BFE6FE8C15E} = {198195E8-0C01-4EB1-BF87-C5FD5A9631D9}
+		{B3B4E7BC-39C6-4D6D-B1DA-AB7771BA1A8C} = {6925F0FE-0626-458B-974A-8BDC1818E740}
 	EndGlobalSection
 EndGlobal
